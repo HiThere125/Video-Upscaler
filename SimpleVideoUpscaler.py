@@ -101,7 +101,13 @@ def upscale_video(video_path, temp_path, size, fps):
     # Define the desired output resolution
     new_width = 1920
     new_height = 1080
-    if size == "1440":
+    if size == "480":
+        new_width = 640
+        new_height = 480
+    elif size == "720":
+        new_width = 1280
+        new_height = 720
+    elif size == "1440":
         new_width = 2560
         new_height = 1440
     elif size == "4k":
@@ -185,7 +191,7 @@ if __name__ == "__main__":
     l3 = Label(root, text = "")
     
     # Create drop down menu
-    options = ["1080", "1440", "4k", "8k"]
+    options = ["480", "720", "1080", "1440", "4k", "8k"]
     clicked = StringVar()           # Datatype of menu text
     clicked.set("1080")             # Initial menu text
     drop = OptionMenu( root , clicked , *options )
